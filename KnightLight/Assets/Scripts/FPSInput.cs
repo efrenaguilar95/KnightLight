@@ -39,10 +39,12 @@ public class FPSInput : MonoBehaviour
         {
             //Start of block of code related to regular movement
             float h = height;
-
-            float deltaX = Input.GetAxis("Horizontal") * speed;
-            float deltaZ = Input.GetAxis("Vertical") * speed;
-            Vector3 movement = new Vector3(deltaX, 0, deltaZ);
+            Vector3 inputdirection = Vector3.zero;
+            //float deltaX = Input.GetAxis("LeftJoystickHorizontal") * speed;
+            //float deltaZ = Input.GetAxis("LeftJoystickVertical") * speed;
+            inputdirection.x = Input.GetAxis("LeftJoystickHorizontal") * speed;
+            inputdirection.y = Input.GetAxis("LeftJoystickVertical") * speed;
+            Vector3 movement = new Vector3(inputdirection.x, 0, inputdirection.y);
             movement = Vector3.ClampMagnitude(movement, speed);
 
             movement.y = gravity;
@@ -62,9 +64,9 @@ public class FPSInput : MonoBehaviour
                 isRunning = false;
                 speed = normalSpeed; //When holding any other combos of keys, the speed value is set to the normal speed value
             }
+            
 
-
-        }
+         }
     }
 
     public void SetMove()

@@ -38,14 +38,14 @@ public class KidManager : MonoBehaviour
 
 	private void setCurrentSpeed()
 	{
-		if (KnightLight.isMonsterInKnightAOE())
-		{
-			currentSpeed = speedRunning;
-		}
-		else
-		{
-			currentSpeed = speedWalking;
-		}
+		//if (KnightLight.isMonsterInKnightAOE())
+		//{
+		//	currentSpeed = speedRunning;
+		//}
+	//	else
+	//	{
+		//	currentSpeed = speedWalking;
+		//}
 	}
 
 	private void braveryDecay()

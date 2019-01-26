@@ -9,7 +9,7 @@ using System.Collections;
 public class FPSInput : MonoBehaviour
 {
     //This set of public variables is for movement speed
-    public float speed = 6.0f;
+    public float speed = 10.0f;
     public float gravity = -9.8f;
     public float runSpeed = 15.0f;
     public float normalSpeed = 6.0f;
@@ -25,12 +25,16 @@ public class FPSInput : MonoBehaviour
     private float height;
 
     private CharacterController _charController;
-
+    public Animation anim;
+    public Animator ani;
     void Start()
     {
+        ani = GameObject.FindGameObjectWithTag("KnightSprite").GetComponent<Animator>();
+        //anim["spin"].layer = 123;
         _charController = GetComponent<CharacterController>();
         tr = transform;
         height = _charController.height;
+        
     }
 
     void Update()
@@ -42,9 +46,12 @@ public class FPSInput : MonoBehaviour
             Vector3 inputdirection = Vector3.zero;
             //float deltaX = Input.GetAxis("LeftJoystickHorizontal") * speed;
             //float deltaZ = Input.GetAxis("LeftJoystickVertical") * speed;
-            inputdirection.x = Input.GetAxis("LeftJoystickHorizontal") * speed;
-            inputdirection.y = Input.GetAxis("LeftJoystickVertical") * speed;
-            Vector3 movement = new Vector3(inputdirection.x, 0, inputdirection.y);
+            inputdirection.x = Input.GetAxis("LeftJoystickHorizontal");
+            inputdirection.z = Input.GetAxis("LeftJoystickVertical");
+            ani.Play("Knight_Left_walk");
+//            Vector3 movement = new Vector3(deltaX, 0, deltaZ);
+            Vector3 movement = new Vector3(inputdirection.x, 0, inputdirection.z);
+
             movement = Vector3.ClampMagnitude(movement, speed);
 
             movement.y = gravity;
@@ -52,6 +59,7 @@ public class FPSInput : MonoBehaviour
             movement *= Time.deltaTime;
             movement = transform.TransformDirection(movement);
             _charController.Move(movement); //Last line of code related to regular movement
+            
 
             //Start of block of code related to running
             if (Input.GetKey(KeyCode.LeftShift))

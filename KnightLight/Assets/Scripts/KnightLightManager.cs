@@ -8,6 +8,7 @@ public class KnightLightManager : MonoBehaviour
 	[SerializeField] float speed = 6f;
 	[SerializeField] float lightAOERadius = 7f;
 	[SerializeField] bool monsterInKnightAOE = false;
+	[SerializeField] Sprite toySprite;
 
 	//Energy Meter
 	[SerializeField] int energyMeterValue = 0;
@@ -25,6 +26,7 @@ public class KnightLightManager : MonoBehaviour
     void Update()
     {
 		monsterInKnightAOE = false;
+		Move();
 	}
 
 	void OnCollisionEnter(Collision collision)
@@ -48,5 +50,22 @@ public class KnightLightManager : MonoBehaviour
 		{
 			energyMeterValue += energyRechargePerMonster;
 		}
+	}
+
+	private void Move()
+	{
+		Rigidbody rb = GetComponent<Rigidbody>();
+
+		if (Input.GetKey(KeyCode.A))
+			rb.AddForce(Vector3.left);
+
+		if (Input.GetKey(KeyCode.D))
+			rb.AddForce(Vector3.right);
+
+		if (Input.GetKey(KeyCode.W))
+			rb.AddForce(Vector3.up);
+
+		if (Input.GetKey(KeyCode.S))
+			rb.AddForce(Vector3.down);
 	}
 }

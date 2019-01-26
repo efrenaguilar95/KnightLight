@@ -83,6 +83,12 @@ public class KidManager : MonoBehaviour
 	{
 		braveryMeterValue -= monsterAttack;
 	}
+
+	IEnumerator BraveryRecoveryRate(float recoverySpeed)
+	{
+		braveryMeterValue += 1;
+		yield return new WaitForSeconds(recoverySpeed);
+	}
 	//Bavery Functions End
 
 
@@ -114,9 +120,5 @@ public class KidManager : MonoBehaviour
 		}
 	}
 
-	IEnumerator BraveryRecoveryRate(float recoverySpeed)
-	{
-		braveryMeterValue += 1;
-		yield return new WaitForSeconds(recoverySpeed);
-	}
+	//Light Source Tirgger Functions End
 }

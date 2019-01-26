@@ -51,13 +51,18 @@ public class MonsterManager : MonoBehaviour
 		{
 			if (GetIsToy())
 			{
-				collision.gameObject.GetComponent<KidManager>().RecoveryBravery();
+				collision.gameObject.GetComponent<KidManager>().RecoveryBraveryChunk();
 				Destroy(gameObject);
 			}
 			else
 			{
 				Attack(collision);
 			}
+		}
+		if(collision.gameObject.tag == "KnightLight" || collision.gameObject.tag == "Lamp")
+		{
+			Animator monsterAnimator = gameObject.GetComponent<Animator>();
+			monsterAnimator.SetBool("InLight", true);
 		}
 	}
 

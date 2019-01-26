@@ -32,6 +32,7 @@ public class KnightLightManager : MonoBehaviour
 		if(collision.gameObject.tag == "monster")
 		{
 			isMonsterInKnightAOE();
+			collision.gameObject.GetComponent<MonsterManager>().changeToToy();
 		}
 	}
 

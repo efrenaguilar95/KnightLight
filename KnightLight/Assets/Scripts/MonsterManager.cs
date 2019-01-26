@@ -6,8 +6,10 @@ public class MonsterManager : MonoBehaviour
 {
 
 	[SerializeField] float speed = 3.5f;
+	[SerializeField] int attackStrength = 6;
 	[SerializeField] LampManager Lamp;
 	[SerializeField] bool childInLampAOE;
+	[SerializeField] bool isToy = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,5 +33,36 @@ public class MonsterManager : MonoBehaviour
 	private void stopMovement()
 	{
 
+	}
+
+	public void changeToToy()
+	{
+		isToy = true;
+	}
+
+	public bool GetIsToy()
+	{
+		return isToy;
+	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.tag == "Kid")
+		{
+			if (GetIsToy())
+			{
+				collision.gameObject.GetComponent<KidManager>().RecoveryBravery();
+				Destroy(gameObject);
+			}
+			else
+			{
+				Attack(collision);
+			}
+		}
+	}
+
+	private void Attack(Collision collision)
+	{
+		collision.gameObject.GetComponent<KidManager>().LoseBravery(attackStrength);
 	}
 }

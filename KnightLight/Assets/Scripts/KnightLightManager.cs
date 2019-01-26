@@ -5,7 +5,7 @@ using UnityEngine;
 public class KnightLightManager : MonoBehaviour
 {
 
-	[SerializeField] float speed = 6f;
+	[SerializeField] float speed = 1000f;
 	[SerializeField] float lightAOERadius = 7f;
 	[SerializeField] bool monsterInKnightAOE = false;
 	[SerializeField] Sprite toySprite;
@@ -14,13 +14,14 @@ public class KnightLightManager : MonoBehaviour
 	[SerializeField] int energyMeterValue = 0;
 	[SerializeField] int energyRechargePerMonster = 5;
 	int energyMeterMax = 100;
-	
 
-    // Start is called before the first frame update
-    void Start()
+	Animator monster_Anime;
+	// Start is called before the first frame update
+	void Start()
     {
-        
-    }
+		
+		monster_Anime = GetComponent<Animator>();
+	}
 
     // Update is called once per frame
     void Update()
@@ -57,10 +58,20 @@ public class KnightLightManager : MonoBehaviour
 		Rigidbody rb = GetComponent<Rigidbody>();
 
 		if (Input.GetKey(KeyCode.A))
-			rb.AddForce(Vector3.left);
+		{
+			rb.AddForce(Vector3.left * speed);
+			monster_Anime.SetBool("isWalkRight", false);
+			monster_Anime.SetBool("isWalkLeft", true);
+		}
+			
 
 		if (Input.GetKey(KeyCode.D))
-			rb.AddForce(Vector3.right);
+		{
+			rb.AddForce(Vector3.right * speed);
+			monster_Anime.SetBool("isWalkLeft", false);
+			monster_Anime.SetBool("isWalkRight", true);
+		}
+			
 
 		if (Input.GetKey(KeyCode.W))
 			rb.AddForce(Vector3.up);

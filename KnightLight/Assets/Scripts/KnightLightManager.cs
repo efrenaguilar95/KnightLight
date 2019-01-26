@@ -7,7 +7,7 @@ public class KnightLightManager : MonoBehaviour
 
 	[SerializeField] float speed = 6f;
 	[SerializeField] float lightAOERadius = 7f;
-	[SerializeField] bool monsterInAOE = false;
+	[SerializeField] bool monsterInKnightAOE = false;
 
 	//Energy Meter
 	[SerializeField] int energyMeterValue = 0;
@@ -24,22 +24,21 @@ public class KnightLightManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		monsterInAOE = false;
-
+		monsterInKnightAOE = false;
 	}
 
 	void OnCollisionEnter(Collision collision)
 	{
 		if(collision.gameObject.tag == "monster")
 		{
-			monsterInKnightAOE();
+			isMonsterInKnightAOE();
 		}
 	}
 
-	public bool monsterInKnightAOE()
+	public bool isMonsterInKnightAOE()
 	{
-		monsterInAOE = true;
-		return monsterInAOE;
+		monsterInKnightAOE = true;
+		return monsterInKnightAOE;
 	}
 
 	public void AddToEnergyMeter()

@@ -17,14 +17,19 @@ public class MonsterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		isChildInLight();
+		ChildInLight();
 	}
 
-	private void isChildInLight()
+	private void ChildInLight()
 	{
-		if(LampManager.ChildInLampAOE())
+		if(Lamp.isChildInLampAOE())
 		{
-
+			stopMovement();
 		}
+	}
+
+	private void stopMovement()
+	{
+
 	}
 }

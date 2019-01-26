@@ -15,9 +15,11 @@ public class KidManager : MonoBehaviour
 	[SerializeField] float speedRunning = 4f;
 	
 	//Two-Player Flash
-	[SerializeField] float flashAOERadius = 5f;
+	[SerializeField] float flashAOERadius = 2f;
 	[SerializeField] bool flashOn = true;
 	[SerializeField] float flashTimer = 10f;
+
+	[SerializeField] KnightLightManager KnightLight;
 
 
     // Start is called before the first frame update
@@ -36,7 +38,7 @@ public class KidManager : MonoBehaviour
 
 	private void setCurrentSpeed()
 	{
-		if (monsterInKnightAOE())
+		if (KnightLight.isMonsterInKnightAOE())
 		{
 			currentSpeed = speedRunning;
 		}

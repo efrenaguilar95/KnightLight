@@ -11,10 +11,15 @@ ModelImporter:
     2300000: table
     3300000: table
     4300000: table
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tableMat
+    second: {fileID: 2100000, guid: 2032814fdfb05d949b34f37207a81f33, type: 2}
   materials:
     importMaterials: 1
-    materialName: 0
+    materialName: 2
     materialSearch: 1
     materialLocation: 1
   animations:

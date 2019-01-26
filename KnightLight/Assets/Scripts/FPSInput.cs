@@ -25,7 +25,7 @@ public class FPSInput : MonoBehaviour
     private float height;
 
     private CharacterController _charController;
-    public Animation anim;
+    //public Animation anim;
     public Animator ani;
     void Start()
     {
@@ -46,11 +46,19 @@ public class FPSInput : MonoBehaviour
             Vector3 inputdirection = Vector3.zero;
             //float deltaX = Input.GetAxis("LeftJoystickHorizontal") * speed;
             //float deltaZ = Input.GetAxis("LeftJoystickVertical") * speed;
-            inputdirection.x = Input.GetAxis("LeftJoystickHorizontal");
-            inputdirection.z = Input.GetAxis("LeftJoystickVertical");
-            ani.Play("Knight_Left_walk");
-//            Vector3 movement = new Vector3(deltaX, 0, deltaZ);
-            Vector3 movement = new Vector3(inputdirection.x, 0, inputdirection.z);
+            inputdirection.x = Input.GetAxis("LeftJoystickHorizontal")*speed;
+            inputdirection.z = Input.GetAxis("LeftJoystickVertical")*speed;
+            // ani.SetFloat("Game", 1);
+            if (inputdirection.x < 1f && inputdirection.x > -1f)
+            {
+                inputdirection.x = 0;
+            }
+            if (inputdirection.z < 1f && inputdirection.z > -1f)
+            {
+                inputdirection.z = 0;
+            }
+            //            Vector3 movement = new Vector3(deltaX, 0, deltaZ);
+            Vector3 movement = new Vector3(inputdirection.x*-1, 0, inputdirection.z);
 
             movement = Vector3.ClampMagnitude(movement, speed);
 
@@ -59,8 +67,17 @@ public class FPSInput : MonoBehaviour
             movement *= Time.deltaTime;
             movement = transform.TransformDirection(movement);
             _charController.Move(movement); //Last line of code related to regular movement
-            
+            Debug.Log("X : "+inputdirection.x);
+            Debug.Log("Z: "+inputdirection.z);
 
+            if (inputdirection.x < 0f)
+            {
+                ani.Play("Knight_Right_walk");
+            }
+            if(inputdirection.x > 0f)
+            {
+                ani.Play("Knight_Left_walk");
+            }
             //Start of block of code related to running
             if (Input.GetKey(KeyCode.LeftShift))
             {

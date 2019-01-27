@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3129751246319033828}
   - component: {fileID: 3129751246319033831}
   - component: {fileID: 3129751246319033835}
-  - component: {fileID: 3129751246319033832}
+  - component: {fileID: 1116684716}
   m_Layer: 9
   m_Name: Knight
   m_TagString: KnightLight
@@ -32,7 +32,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3129751246319033826}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.1619997, y: 4.03, z: 1.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -96,7 +96,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 1
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -182,22 +182,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!54 &3129751246319033832
-Rigidbody:
+--- !u!114 &1116684716
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3129751246319033826}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53ce6f9bd5e30143a95265f59dbc4d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1000
+  lightAOERadius: 100
+  monsterInKnightAOE: 0
+  toySprite: {fileID: 0}
+  energyMeterValue: 0
+  energyRechargePerMonster: 5
 --- !u!1 &3129751247332451879
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,9 +242,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.9257078, b: 0.18431371, a: 1}
-  m_Intensity: 10
+  m_Intensity: 22
   m_Range: 10
-  m_SpotAngle: 28
+  m_SpotAngle: 72.6
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
@@ -359,17 +361,27 @@ PrefabInstance:
       propertyPath: m_UpdateMode
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 536510219560303277, guid: 430f894fcacb6174ea7528280e78472b,
+    - target: {fileID: 536510219424091123, guid: 430f894fcacb6174ea7528280e78472b,
         type: 3}
-      propertyPath: m_Controller
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 536510219424091123, guid: 430f894fcacb6174ea7528280e78472b,
+        type: 3}
+      propertyPath: CollisionModule.plane0
       value: 
-      objectReference: {fileID: 9100000, guid: 1be196f75fe2bd74eb85e939d8e84a22, type: 2}
-    m_RemovedComponents:
-    - {fileID: 536510219560303278, guid: 430f894fcacb6174ea7528280e78472b, type: 3}
+      objectReference: {fileID: 3178711338598249625}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 430f894fcacb6174ea7528280e78472b, type: 3}
 --- !u!4 &3178711338436341982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 536510219560303250, guid: 430f894fcacb6174ea7528280e78472b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3129751247058569804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3178711338598249625 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 536510219050860245, guid: 430f894fcacb6174ea7528280e78472b,
     type: 3}
   m_PrefabInstance: {fileID: 3129751247058569804}
   m_PrefabAsset: {fileID: 0}

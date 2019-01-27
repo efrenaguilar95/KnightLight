@@ -6,30 +6,37 @@ public class DoorToNextLevel : MonoBehaviour
 {
 
     public GameObject kidGameObject;
+    public Transform knightTransform;
     public Camera cam;
     //public bool isPaused;
     private bool showDoor;
     public float timeBetweenPause = 1f;
     public float countdown = 0;
+    private Vector3 doorPosition;
+    private float kidDistance;
+    private float knightDistance;
 
     // Start is called before the first frame update
     void Start()
     {
         kidGameObject = GameObject.FindGameObjectWithTag("Kid");
+        knightTransform = GameObject.FindGameObjectWithTag("KnightLight").transform;
         cam = Camera.FindObjectOfType<Camera>();
         if (kidGameObject == null)
         {
-            Debug.LogError("No Kid referrenced.");
+            Debug.LogError("No Kid referenced.");
         }
-
-
+        if (knightTransform == null)
+        {
+            Debug.LogError("No Knight referenced.");
+        }
+        doorPosition = this.transform.position;
         showDoor = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Updating");
         if (startTimer())
         {
             countdown -= Time.deltaTime;
@@ -42,6 +49,7 @@ public class DoorToNextLevel : MonoBehaviour
         {
             changeCamera();
         }
+        checkDistanceFromDoor();
     }
 
     private bool startTimer()
@@ -53,14 +61,26 @@ public class DoorToNextLevel : MonoBehaviour
         return false; 
     }
 
+    private void checkDistanceFromDoor()
+    {
+        if (showedDoor())
+        {
+            kidDistance = Vector3.Distance(doorPosition, kidGameObject.transform.position);
+            knightDistance = Vector3.Distance(doorPosition, knightTransform.position);
+            if (kidDistance <= 5f && knightDistance <= 5f)
+            {
+                //change scene
+                Debug.Log("Changing Scene");
+            }
+        }
+    }
+
     private void changeCamera()
     {
         if (!showDoor)
         {
-            Debug.Log("ShowDoor = false");
             if (kidGameObject.GetComponent<KidManager>().hasKey)
             {
-                Debug.Log("Kid Has Key");
                 //Put Audio of unlocking door here
                 cam.GetComponent<SingleTargetCamera>().enabled = true;
                 cam.GetComponent<MultipleTargetCamera>().enabled = false;

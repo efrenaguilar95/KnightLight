@@ -54,8 +54,8 @@ public class MonsterManager : MonoBehaviour
     private void moveToPlayer()
     {
         xCoord = agent.transform.position.x;
-        Debug.Log("xCoord = " + xCoord);
-        Debug.Log("playerPos= " + player.position.x);
+        //Debug.Log("xCoord = " + xCoord);
+        //Debug.Log("playerPos= " + player.position.x);
         if (xCoord <= player.position.x)
         {
             monster_Anime.SetBool("IsMoveLeft", false);
@@ -110,6 +110,7 @@ public class MonsterManager : MonoBehaviour
         {
             //monsterAnimator.SetBool("InLight", true);
             turnToToy();
+            Debug.LogWarning(Light.gameObject.name, (Object)Light.gameObject);
             //PlayDustParticle();
         }
     }
@@ -120,7 +121,7 @@ public class MonsterManager : MonoBehaviour
         {
             monster_Anime = GetComponent<Animator>();
             //monsterAnimator.SetBool("InLight", true);
-            //turnToToy();
+            turnToToy();
             //PlayDustParticle();
         }
     }
@@ -144,8 +145,10 @@ public class MonsterManager : MonoBehaviour
         else
         {
             monster_Anime.SetBool("IsToy", true);
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = toySprite;
             PlayDustParticle();
+            this.gameObject.GetComponent<Animator>().enabled = false;
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = toySprite;
+            Debug.Log(this.gameObject.GetComponent<SpriteRenderer>().sprite);
             isToy = true;
         }
         //}

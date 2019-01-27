@@ -53,7 +53,8 @@ public class KnightLightManager : MonoBehaviour
 		}
 	}
 
-/*	private void Move()
+
+   /* private void Move()
 	{
 		Rigidbody rb = GetComponent<Rigidbody>();
 
@@ -79,5 +80,5 @@ public class KnightLightManager : MonoBehaviour
 		if (Input.GetKey(KeyCode.S))
 			rb.AddForce(Vector3.down);
 	}
-*/
+    */
 }

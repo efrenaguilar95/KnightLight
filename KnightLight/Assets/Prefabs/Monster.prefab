@@ -96,9 +96,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.5
   attackStrength: 6
-  Lamp: {fileID: 0}
   childInLampAOE: 0
   isToy: 0
+  Lamp: {fileID: 0}
+  toySprite: {fileID: 0}
+  duskParticle: {fileID: 0}
 --- !u!95 &1480690446686956103
 Animator:
   serializedVersion: 3
@@ -132,6 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.5
   attackStrength: 6
-  Lamp: {fileID: 0}
   childInLampAOE: 0
   isToy: 0
+  Lamp: {fileID: 0}
+  toySprite: {fileID: 0}
+  duskParticle: {fileID: 0}

@@ -45,7 +45,7 @@ public class KidManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- Debug.Log("KEY: " + hasKey);
+        Debug.Log("KEY: " + hasKey);
         //GO TO KEY
         GameObject key = GameObject.FindGameObjectWithTag("Key");
         if (key != null)
@@ -103,8 +103,9 @@ public class KidManager : MonoBehaviour
     }
     private void stopMovement()
     {
-        agent.isStopped = true;
+        //agent.isStopped = true;
         transform.position = this.transform.position;
+        agent.SetDestination(transform.position);        
     }
     //Speed Functions Start
     /*	private void setCurrentSpeed()

@@ -105,8 +105,12 @@ public class KidManager : MonoBehaviour
         }
         //END OF PATHING
 
-        
-        //braveryBarUI.value = braveryMeterValue;
+        if(Vector3.Distance(transform.position, player.position) >= 10f)
+        {
+            Debug.Log("TESTING");
+            braveryDecay();
+        }
+        braveryBarUI.value = braveryMeterValue;
         //setCurrentSpeed();
         //flashRecharger();
     }
@@ -141,8 +145,9 @@ public class KidManager : MonoBehaviour
         if (xCoord <= player.position.x)
         {
          //   monster_Anime.SetBool("IsMoveLeft", false);
-          //  monster_Anime.SetBool("IsMoveRight", true);
+         //  monster_Anime.SetBool("IsMoveRight", true);
         }
+
         agent.isStopped = false;
         agent.speed = speed;
         agent.SetDestination(player.position);

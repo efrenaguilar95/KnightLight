@@ -55,64 +55,57 @@ public class KidManager : MonoBehaviour
     {
         //Debug.Log("KEY: " + hasKey);
         //GO TO KEY
-        if (kidCountdown <= 0)
+        GameObject key = GameObject.FindGameObjectWithTag("Key");
+        if (key != null)
         {
-            GameObject key = GameObject.FindGameObjectWithTag("Key");
-            if (key != null)
+            agent.SetDestination(key.transform.position);
+            state = KidState.RUNNING;
+            if (Vector3.Distance(transform.position, key.transform.position) <= 2.5f)
             {
-                agent.SetDestination(key.transform.position);
-                state = KidState.RUNNING;
-                if (Vector3.Distance(transform.position, key.transform.position) <= 2f)
-                {
-                    hasKey = true;
-                    Destroy(key.gameObject);
-                }
+                hasKey = true;
+                Destroy(key.gameObject);
             }
-            else
-            {
-                //GO TO FIRST INSTANTIATED TOY
-                GameObject[] toys = GameObject.FindGameObjectsWithTag("Toy");
-                if (toys.Length > 0)
-                {
-                    if (Vector3.Distance(transform.position, toys[0].transform.position) <= 20f)
-                    {
-                        agent.SetDestination(toys[0].transform.position);
-                        //IF CLOSE ENOUGH, DESTROY THE TOY
-                        if (Vector3.Distance(transform.position, toys[0].transform.position) <= 2f && state == KidState.RUNNING)
-                        {
-                            state = KidState.ATTACKING;
-
-                            //Debug.Log("TestDestroy");
-                            Destroy(toys[0].gameObject);
-                        }
-                    }
-                }
-                else //GO TO PLAYER IF NO TOYS
-                {
-                    state = KidState.RUNNING;
-                    if (Vector3.Distance(transform.position, player.position) <= 2f)
-                    {
-                        stopMovement();
-                    }
-                    else
-                    {
-                        moveToPlayer();
-                    }
-                }
-
-            }
-            //END OF PATHING
         }
         else
         {
-            kidCountdown -= Time.deltaTime;
+            //GO TO FIRST INSTANTIATED TOY
+            GameObject[] toys = GameObject.FindGameObjectsWithTag("Toy");
+            if (toys.Length > 0)
+            {
+                if (Vector3.Distance(transform.position, toys[0].transform.position) <= 20f)
+                {
+                    agent.SetDestination(toys[0].transform.position);
+                    //IF CLOSE ENOUGH, DESTROY THE TOY
+                    if (Vector3.Distance(transform.position, toys[0].transform.position) <= 2.5f && state == KidState.RUNNING)
+                    {
+                        state = KidState.ATTACKING;
+                        Destroy(toys[0].gameObject);
+                        state = KidState.RUNNING;
+                    }
+                }
+            }
+            else //GO TO PLAYER IF NO TOYS
+            {
+                state = KidState.RUNNING;
+                if (Vector3.Distance(transform.position, player.position) <= 2f)
+                {
+                    stopMovement();
+                }
+                else
+                {
+                    moveToPlayer();
+                }
+            }
+
         }
+        //END OF PATHING
 
         
         //braveryBarUI.value = braveryMeterValue;
         //setCurrentSpeed();
         //flashRecharger();
     }
+
     private void stopMovement()
     {
         //agent.isStopped = true;

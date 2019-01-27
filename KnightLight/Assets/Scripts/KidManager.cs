@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.AI;
 public class KidManager : MonoBehaviour
 {
 	//Bravery
@@ -15,8 +15,9 @@ public class KidManager : MonoBehaviour
 	int braveryMaxValue = 100;
 	float decayTimer = .01f;
 
-	//Speed
-	[SerializeField] float currentSpeed;
+    //Speed
+    [SerializeField] float speed = 3.5f;
+    [SerializeField] float currentSpeed;
 	[SerializeField] float speedWalking = 2f;
 	[SerializeField] float speedRunning = 4f;
 	
@@ -24,45 +25,123 @@ public class KidManager : MonoBehaviour
 	[SerializeField] float flashAOERadius = 2f;
 	[SerializeField] bool flashOn = true;
 	[SerializeField] float flashTimer = 10f;
-
+    public bool hasKey;
 	[SerializeField] KnightLightManager KnightLight;
-
-
+    private float xCoord;
+    private NavMeshAgent agent;
+    private Transform player;
+    private Transform[] toypos;
     // Start is called before the first frame update
     void Start()
     {
+        hasKey = false;
 		decay = StartCoroutine(braveryDecay());
 		currentSpeed = speedWalking;
+        player = GameObject.FindGameObjectWithTag("KnightLight").transform;
+        agent = GetComponent<NavMeshAgent>();
+       // alive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-		braveryBarUI.value = braveryMeterValue;
-		setCurrentSpeed();
-		//flashRecharger();
-	}
+ Debug.Log("KEY: " + hasKey);
+        //GO TO KEY
+        GameObject key = GameObject.FindGameObjectWithTag("Key");
+        if (key != null)
+        {
+            agent.SetDestination(key.transform.position);
+           
+            if (Vector3.Distance(transform.position, key.transform.position) <= 2.8f)
+            {
+                hasKey = true;
+                Debug.Log("KEY: " + hasKey);
+                Destroy(key.gameObject);
+            }
+        }
+        else
+        {
+            //GO TO FIRST INSTANTIATED TOY
+            GameObject[] toys = GameObject.FindGameObjectsWithTag("Toy");
+            if (toys.Length > 0)
+            {
 
-	//Speed Functions Start
-	private void setCurrentSpeed()
-	{
-		if (KnightLight.isMonsterInKnightAOE())
-		{
-			currentSpeed = speedRunning;
-		}
-		else
-		{
-			currentSpeed = speedWalking;
-		}
-	}
-	//Speed Functions End
+
+                if (Vector3.Distance(transform.position, toys[0].transform.position) <= 20f)
+                {
+                 //   Destroy(toys[0].gameObject);
+                    agent.SetDestination(toys[0].transform.position);
+                    //IF CLOSE ENOUGH, DESTROY THE TOY
+                    if(Vector3.Distance(transform.position, toys[0].transform.position) <= 2.8f)
+                    {
+                   //     Debug.Log("TestDestroy");
+                        Destroy(toys[0].gameObject);
+                    }
+                }
 
 
-	//Bavery Functions Start
+            }
+            else //GO TO PLAYER IF NO TOYS
+            {
+                if (Vector3.Distance(transform.position, player.position) <= 2f)
+                {
+                    stopMovement();
+                }
+                else
+                {
+                    moveToPlayer();
+                }
+            }
+
+        }
+        //END OF PATHING
+
+        
+        //braveryBarUI.value = braveryMeterValue;
+        //setCurrentSpeed();
+        //flashRecharger();
+    }
+    private void stopMovement()
+    {
+        agent.isStopped = true;
+        transform.position = this.transform.position;
+    }
+    //Speed Functions Start
+    /*	private void setCurrentSpeed()
+        {
+            if (KnightLight.isMonsterInKnightAOE())
+            {
+                currentSpeed = speedRunning;
+            }
+            else
+            {
+                currentSpeed = speedWalking;
+            }
+        }
+        */
+    //Speed Functions End
 
 
-	
-	IEnumerator braveryDecay()
+    //Bavery Functions Start
+
+    private void moveToPlayer()
+    {
+        xCoord = agent.transform.position.x;
+        if (xCoord <= player.position.x)
+        {
+         //   monster_Anime.SetBool("IsMoveLeft", false);
+          //  monster_Anime.SetBool("IsMoveRight", true);
+        }
+        agent.isStopped = false;
+        agent.speed = speed;
+        agent.SetDestination(player.position);
+        Vector3 eulerAngles = transform.rotation.eulerAngles;
+        eulerAngles = new Vector3(eulerAngles.x, 0, eulerAngles.z);
+        transform.rotation = Quaternion.Euler(eulerAngles);
+
+    }
+
+    IEnumerator braveryDecay()
 	{ 
 		if(decayTimer > 0)
 		{
@@ -111,7 +190,16 @@ public class KidManager : MonoBehaviour
 			StopCoroutine(decay);
 			heal = StartCoroutine(BraveryRecoveryRate(0.1f));
 		}
+
+        if(LightSource.tag=="Toy")
+        {
+            Debug.Log("TEST COLLIDE TOY");
+            Destroy(LightSource.gameObject);
+        }
+
 	}
+
+
 
 	private void OnTriggerExit(Collider LightSource)
 	{

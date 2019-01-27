@@ -15,12 +15,11 @@ public class KnightLightManager : MonoBehaviour
 	[SerializeField] int energyRechargePerMonster = 5;
 	int energyMeterMax = 100;
 
-	Animator monster_Anime;
+	Animator Knight_Anime;
 	// Start is called before the first frame update
 	void Start()
     {
-		
-		monster_Anime = GetComponent<Animator>();
+		Knight_Anime = GetComponent<Animator>();
 	}
 
     // Update is called once per frame
@@ -28,6 +27,7 @@ public class KnightLightManager : MonoBehaviour
     {
 		monsterInKnightAOE = false;
 		Move();
+		
 	}
 
 	void OnCollisionEnter(Collision collision)
@@ -60,16 +60,16 @@ public class KnightLightManager : MonoBehaviour
 		if (Input.GetKey(KeyCode.A))
 		{
 			rb.AddForce(Vector3.left * speed);
-			monster_Anime.SetBool("isWalkRight", false);
-			monster_Anime.SetBool("isWalkLeft", true);
+			Knight_Anime.SetBool("	", false);
+			Knight_Anime.SetBool("isWalkLeft", true);
 		}
 			
 
 		if (Input.GetKey(KeyCode.D))
 		{
 			rb.AddForce(Vector3.right * speed);
-			monster_Anime.SetBool("isWalkLeft", false);
-			monster_Anime.SetBool("isWalkRight", true);
+			Knight_Anime.SetBool("isWalkLeft", false);
+			Knight_Anime.SetBool("isWalkRight", true);
 		}
 			
 
@@ -79,4 +79,5 @@ public class KnightLightManager : MonoBehaviour
 		if (Input.GetKey(KeyCode.S))
 			rb.AddForce(Vector3.down);
 	}
+
 }

@@ -5,7 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.AI;
 public class KidManager : MonoBehaviour
 {
-	//Bravery
+    public enum KidState { ATTACKING , RUNNING , CRYING }
+
+    //Bravery
 	[SerializeField] int braveryMeterValue;
 	[SerializeField] int braveryDecayRate = 2;
 	[SerializeField] int braveryRecovery = 5;
@@ -25,12 +27,18 @@ public class KidManager : MonoBehaviour
 	[SerializeField] float flashAOERadius = 2f;
 	[SerializeField] bool flashOn = true;
 	[SerializeField] float flashTimer = 10f;
+    public float timeBetweenAttacks = 1.5f;
+
     public bool hasKey;
+    public float kidCountdown;
 	[SerializeField] KnightLightManager KnightLight;
+
     private float xCoord;
     private NavMeshAgent agent;
     private Transform player;
     private Transform[] toypos;
+    private KidState state = KidState.RUNNING;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,56 +53,60 @@ public class KidManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("KEY: " + hasKey);
+        //Debug.Log("KEY: " + hasKey);
         //GO TO KEY
-        GameObject key = GameObject.FindGameObjectWithTag("Key");
-        if (key != null)
+        if (kidCountdown <= 0)
         {
-            agent.SetDestination(key.transform.position);
-           
-            if (Vector3.Distance(transform.position, key.transform.position) <= 2.8f)
+            GameObject key = GameObject.FindGameObjectWithTag("Key");
+            if (key != null)
             {
-                hasKey = true;
-                Debug.Log("KEY: " + hasKey);
-                Destroy(key.gameObject);
-            }
-        }
-        else
-        {
-            //GO TO FIRST INSTANTIATED TOY
-            GameObject[] toys = GameObject.FindGameObjectsWithTag("Toy");
-            if (toys.Length > 0)
-            {
-
-
-                if (Vector3.Distance(transform.position, toys[0].transform.position) <= 20f)
+                agent.SetDestination(key.transform.position);
+                state = KidState.RUNNING;
+                if (Vector3.Distance(transform.position, key.transform.position) <= 2f)
                 {
-                 //   Destroy(toys[0].gameObject);
-                    agent.SetDestination(toys[0].transform.position);
-                    //IF CLOSE ENOUGH, DESTROY THE TOY
-                    if(Vector3.Distance(transform.position, toys[0].transform.position) <= 2.8f)
+                    hasKey = true;
+                    Destroy(key.gameObject);
+                }
+            }
+            else
+            {
+                //GO TO FIRST INSTANTIATED TOY
+                GameObject[] toys = GameObject.FindGameObjectsWithTag("Toy");
+                if (toys.Length > 0)
+                {
+                    if (Vector3.Distance(transform.position, toys[0].transform.position) <= 20f)
                     {
-                   //     Debug.Log("TestDestroy");
-                        Destroy(toys[0].gameObject);
+                        agent.SetDestination(toys[0].transform.position);
+                        //IF CLOSE ENOUGH, DESTROY THE TOY
+                        if (Vector3.Distance(transform.position, toys[0].transform.position) <= 2f && state == KidState.RUNNING)
+                        {
+                            state = KidState.ATTACKING;
+
+                            //Debug.Log("TestDestroy");
+                            Destroy(toys[0].gameObject);
+                        }
+                    }
+                }
+                else //GO TO PLAYER IF NO TOYS
+                {
+                    state = KidState.RUNNING;
+                    if (Vector3.Distance(transform.position, player.position) <= 2f)
+                    {
+                        stopMovement();
+                    }
+                    else
+                    {
+                        moveToPlayer();
                     }
                 }
 
-
             }
-            else //GO TO PLAYER IF NO TOYS
-            {
-                if (Vector3.Distance(transform.position, player.position) <= 2f)
-                {
-                    stopMovement();
-                }
-                else
-                {
-                    moveToPlayer();
-                }
-            }
-
+            //END OF PATHING
         }
-        //END OF PATHING
+        else
+        {
+            kidCountdown -= Time.deltaTime;
+        }
 
         
         //braveryBarUI.value = braveryMeterValue;

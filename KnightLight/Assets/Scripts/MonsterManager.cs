@@ -7,7 +7,7 @@ public class MonsterManager : MonoBehaviour
 {
     public Sprite toySprite;
 
-    [SerializeField] float speed = 3.5f;
+    [SerializeField] float speed = 5.5f;
     [SerializeField] int attackStrength = 6;
     [SerializeField] bool childInLampAOE;
     [SerializeField] bool isToy = false;
@@ -132,9 +132,9 @@ public class MonsterManager : MonoBehaviour
         if (Light.gameObject.tag == "KnightLight" || Light.gameObject.tag == "Lamp")
         {
             monster_Anime = GetComponent<Animator>();
-            turnToToy();
             if (this.gameObject.tag != "Key")
             {
+                turnToToy();
                 this.gameObject.tag = "Monster";
             }
         }

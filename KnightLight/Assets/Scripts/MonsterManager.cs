@@ -98,7 +98,7 @@ public class MonsterManager : MonoBehaviour
 		if (Light.gameObject.tag == "KnightLight" || Light.gameObject.tag == "Lamp")
 		{
 			Animator monsterAnimator = gameObject.GetComponent<Animator>();
-			monsterAnimator.SetBool("InLight", true);
+	//		monsterAnimator.SetBool("InLight", true);
 			turnToToy();
 			//PlayDustParticle();
 		}

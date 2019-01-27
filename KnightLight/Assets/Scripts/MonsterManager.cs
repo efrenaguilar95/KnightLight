@@ -21,6 +21,7 @@ public class MonsterManager : MonoBehaviour
     private Transform player;
     private bool alive;
     private float xCoord;
+    private Vector3 eulerAngles;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,13 @@ public class MonsterManager : MonoBehaviour
         //	}
     }
 
+    private void freezeAngle()
+    {
+        eulerAngles = transform.rotation.eulerAngles;
+        eulerAngles = new Vector3(eulerAngles.x, 0, eulerAngles.z);
+        transform.rotation = Quaternion.Euler(eulerAngles);
+    }
+
     private void moveToPlayer()
     {
         xCoord = agent.transform.position.x;
@@ -65,15 +73,13 @@ public class MonsterManager : MonoBehaviour
         agent.isStopped = false;
         agent.speed = speed;
         agent.SetDestination(player.position);
-        Vector3 eulerAngles = transform.rotation.eulerAngles;
-        eulerAngles = new Vector3(eulerAngles.x, 0, eulerAngles.z);
-        transform.rotation = Quaternion.Euler(eulerAngles);
-
+        freezeAngle();
     }
 
     private void stopMovement()
     {
         agent.isStopped = true;
+        freezeAngle();
         transform.position = this.transform.position;
     }
 

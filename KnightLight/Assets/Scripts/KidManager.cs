@@ -105,12 +105,12 @@ public class KidManager : MonoBehaviour
         }
         //END OF PATHING
 
-        if(Vector3.Distance(transform.position, player.position) >= 10f)
-        {
-            Debug.Log("TESTING");
-            braveryDecay();
-        }
-        braveryBarUI.value = braveryMeterValue;
+        //if(Vector3.Distance(transform.position, player.position) >= 10f)
+        //{
+            //Debug.Log("TESTING");
+        //    braveryDecay();
+        //}
+        //braveryBarUI.value = braveryMeterValue;
         //setCurrentSpeed();
         //flashRecharger();
     }

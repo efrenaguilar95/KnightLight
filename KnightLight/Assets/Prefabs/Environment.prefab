@@ -303,6 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kidGameObject: {fileID: 0}
+  knightTransform: {fileID: 0}
   cam: {fileID: 0}
   timeBetweenPause: 4
   countdown: 0
@@ -1262,6 +1263,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
         type: 3}
+      propertyPath: knightAndKid.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
+        type: 3}
       propertyPath: spawnPoints.Array.data[0].spawnPoint
       value: 
       objectReference: {fileID: 8103711390985573569}
@@ -1324,6 +1330,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1169105824380367186}
     m_Modifications:
+    - target: {fileID: 5048575328261370603, guid: 079e42e4e3217694584e7bf5dd28f4f1,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
     - target: {fileID: 5048575328261370601, guid: 079e42e4e3217694584e7bf5dd28f4f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1378,11 +1389,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5048575328261370603, guid: 079e42e4e3217694584e7bf5dd28f4f1,
-        type: 3}
-      propertyPath: m_Name
-      value: AudioManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079e42e4e3217694584e7bf5dd28f4f1, type: 3}

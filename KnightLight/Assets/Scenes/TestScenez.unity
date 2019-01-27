@@ -405,19 +405,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3129751247433882690}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &1116684715
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1116684704}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1116684716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1000
-  lightAOERadius: 7
+  lightAOERadius: 100
   monsterInKnightAOE: 0
   toySprite: {fileID: 0}
   energyMeterValue: 0
@@ -780,6 +767,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3129751246319033827, guid: 276f030cff33069409460af7d53468d5,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3129751246319033832, guid: 276f030cff33069409460af7d53468d5, type: 3}

@@ -40,7 +40,10 @@ public class MonsterManager : MonoBehaviour
         {
             stopMovement();
         }
-        moveToPlayer();
+        else
+        {
+            moveToPlayer();
+        }
     }
 
     private void ChildInLight()
@@ -54,8 +57,6 @@ public class MonsterManager : MonoBehaviour
     private void moveToPlayer()
     {
         xCoord = agent.transform.position.x;
-        //Debug.Log("xCoord = " + xCoord);
-        //Debug.Log("playerPos= " + player.position.x);
         if (xCoord <= player.position.x)
         {
             monster_Anime.SetBool("IsMoveLeft", false);
@@ -108,10 +109,15 @@ public class MonsterManager : MonoBehaviour
     {
         if (Light.gameObject.tag == "KnightLight" || Light.gameObject.tag == "Lamp")
         {
-            //monsterAnimator.SetBool("InLight", true);
             turnToToy();
-            Debug.LogWarning(Light.gameObject.name, (Object)Light.gameObject);
-            //PlayDustParticle();
+            if (this.toySprite.name == "key")
+            {
+                this.gameObject.tag = "Key";
+            }
+            else
+            {
+                this.gameObject.tag = "Toy";
+            }
         }
     }
 
@@ -120,9 +126,11 @@ public class MonsterManager : MonoBehaviour
         if (Light.gameObject.tag == "KnightLight" || Light.gameObject.tag == "Lamp")
         {
             monster_Anime = GetComponent<Animator>();
-            //monsterAnimator.SetBool("InLight", true);
             turnToToy();
-            //PlayDustParticle();
+            if (this.gameObject.tag != "Key")
+            {
+                this.gameObject.tag = "Monster";
+            }
         }
     }
 
@@ -139,6 +147,7 @@ public class MonsterManager : MonoBehaviour
         if (isToy)
         {
             monster_Anime.SetBool("IsToy", false);
+            this.gameObject.GetComponent<Animator>().enabled = true;
             PlayDustParticle();
             isToy = false;
         }
@@ -146,9 +155,10 @@ public class MonsterManager : MonoBehaviour
         {
             monster_Anime.SetBool("IsToy", true);
             PlayDustParticle();
+            stopMovement();
             this.gameObject.GetComponent<Animator>().enabled = false;
             this.gameObject.GetComponent<SpriteRenderer>().sprite = toySprite;
-            Debug.Log(this.gameObject.GetComponent<SpriteRenderer>().sprite);
+            //Debug.Log(this.gameObject.GetComponent<SpriteRenderer>().sprite);
             isToy = true;
         }
         //}

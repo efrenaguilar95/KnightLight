@@ -10,6 +10,8 @@ TagManager:
   - Kid
   - KnightSprite
   - SpawnPoint
+  - Toy
+  - Key
   layers:
   - Default
   - TransparentFX

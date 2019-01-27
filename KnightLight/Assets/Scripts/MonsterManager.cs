@@ -29,6 +29,7 @@ public class MonsterManager : MonoBehaviour
         monster_Anime = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Kid").transform;
         agent = GetComponent<NavMeshAgent>();
+     //   FindObjectOfType<AudioManager>().Play("SleepTight");
         alive = true;
     }
 
@@ -147,7 +148,7 @@ public class MonsterManager : MonoBehaviour
     }
 
     private void turnToToy()
-    {
+    { FindObjectOfType<AudioManager>().Play("MonsterPoof01");
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
         if (isToy)
@@ -155,6 +156,7 @@ public class MonsterManager : MonoBehaviour
             monster_Anime.SetBool("IsToy", false);
             this.gameObject.GetComponent<Animator>().enabled = true;
             PlayDustParticle();
+           
             isToy = false;
         }
         else

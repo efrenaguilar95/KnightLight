@@ -20,7 +20,8 @@ public class MultipleTargetCamera : MonoBehaviour
     private void Start()
     {
         cam = GetComponent<Camera>();
-
+        FindObjectOfType<AudioManager>().Play("ShadowsOfNight");
+       // FindObjectOfType<AudioManager>().Play("ToySqueak01");
     }
 
     void LateUpdate()

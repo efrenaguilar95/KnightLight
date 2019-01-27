@@ -217,7 +217,7 @@ PrefabInstance:
         type: 3}
       propertyPath: knightAndKid.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1758535966}
     - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
         type: 3}
       propertyPath: knightAndKid.Array.data[1]
@@ -323,6 +323,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_Name
+      value: tabl
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.581624
@@ -379,18 +391,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
-      propertyPath: m_Name
-      value: tabl
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
 --- !u!1001 &492170984
@@ -400,6 +400,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7912850202912531287, guid: 1a576f905e0d7e9479db6c9427d67e4f,
+        type: 3}
+      propertyPath: m_Name
+      value: Kid
+      objectReference: {fileID: 0}
     - target: {fileID: 7912850202912531291, guid: 1a576f905e0d7e9479db6c9427d67e4f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -454,11 +459,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912850202912531287, guid: 1a576f905e0d7e9479db6c9427d67e4f,
-        type: 3}
-      propertyPath: m_Name
-      value: Kid
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a576f905e0d7e9479db6c9427d67e4f, type: 3}
@@ -529,7 +529,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1017051431
 PrefabInstance:
@@ -772,34 +772,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: ShadowsOfNight
+    clip: {fileID: 8300000, guid: 11adb48bfb46dbc43a344d03415e40a4, type: 3}
+    volume: 0.031
+    pitch: 1.17
+    loop: 1
+    source: {fileID: 0}
+  - name: SleepTight
+    clip: {fileID: 8300000, guid: 1521b661dcd52f6438eea9ac0af26870, type: 3}
+    volume: 0.928
+    pitch: 1.15
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: MonsterPoof01
+    clip: {fileID: 8300000, guid: c27daff9ee5ec6c48a84cdf1858e3700, type: 3}
+    volume: 0.22
+    pitch: 1.06
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: ToySqueak01
+    clip: {fileID: 8300000, guid: c0412d610f3402347937570a097bcc51, type: 3}
+    volume: 0.23
+    pitch: 0.96
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
-    loop: 0
-    source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: ToySqueak02
+    clip: {fileID: 8300000, guid: 58ebe16ba1175d143955173e94a3ef52, type: 3}
+    volume: 0.23
+    pitch: 0.58
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1551334334
@@ -809,12 +809,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551334332}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4656361, y: 10.005521, z: 9.554706}
+  m_LocalRotation: {x: -0, y: -0, z: -5.820766e-11, w: 1}
+  m_LocalPosition: {x: -1.4656355, y: 1.78, z: 3.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1758535966 stripped
 Transform:

@@ -53,6 +53,7 @@ public class KidManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         //Debug.Log("KEY: " + hasKey);
         //GO TO KEY
         GameObject key = GameObject.FindGameObjectWithTag("Key");
@@ -64,7 +65,9 @@ public class KidManager : MonoBehaviour
             {
                 hasKey = true;
                 Destroy(key.gameObject);
+                FindObjectOfType<AudioManager>().Play("ToySqueak02");
             }
+
         }
         else
         {
@@ -78,9 +81,11 @@ public class KidManager : MonoBehaviour
                     //IF CLOSE ENOUGH, DESTROY THE TOY
                     if (Vector3.Distance(transform.position, toys[0].transform.position) <= 2.5f && state == KidState.RUNNING)
                     {
+                       
                         state = KidState.ATTACKING;
                         Destroy(toys[0].gameObject);
                         state = KidState.RUNNING;
+                       FindObjectOfType<AudioManager>().Play("ToySqueak01");
                     }
                 }
             }

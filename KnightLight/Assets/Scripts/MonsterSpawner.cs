@@ -78,7 +78,7 @@ public class MonsterSpawner : MonoBehaviour
                 //Move forward and pick a random monster to spawn
                 pickMonster();
                 monsterCounter++;
-                Debug.Log("monsterCounter = " + monsterCounter);
+                //Debug.Log("monsterCounter = " + monsterCounter);
             }
             spawnCountdown = timeBetweenSpawns;
         }
@@ -117,7 +117,7 @@ public class MonsterSpawner : MonoBehaviour
 
     void pickMonster()
     {
-        Debug.Log("Choosing Monster: ");
+        //Debug.Log("Choosing Monster: ");
         state = SpawnState.SPAWNING;
         MonsterManager mon = monster.GetComponent<MonsterManager>();
         if ((monsterCounter >= maxCountForKey) && !spawnedKey)
@@ -135,7 +135,7 @@ public class MonsterSpawner : MonoBehaviour
 
     List<Transform> chooseSpawnLocation()
     {
-        Debug.Log("Pick Spawn Location");
+        //Debug.Log("Pick Spawn Location");
         List<Transform> openSP = new List<Transform>();
         for (int i = 0; i < spawnPoints.Length; i++)
         {
@@ -151,7 +151,7 @@ public class MonsterSpawner : MonoBehaviour
 
     void spawnMonster(Transform monster)
     {
-    	Debug.Log("Spawning monster: " + monster.name);
+    	//Debug.Log("Spawning monster: " + monster.name);
         Vector3 newSpawnPos, randSpawnPos;
         List<Transform> openSP = chooseSpawnLocation();
     	Transform spawnPoint = openSP[Random.Range(0, openSP.Count)];

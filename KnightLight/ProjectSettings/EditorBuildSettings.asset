@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 3df04fa620b2337448f1830126719113
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Adam.unity
     guid: b78908a8f8840d74db3423830c07dc14
+  - enabled: 1
+    path: Assets/Scenes/RickyTestScene2.unity
+    guid: 95813ba5d879d014fb511864a561f6af
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: edfcb03dc7498b14392d3f0fa12c3088

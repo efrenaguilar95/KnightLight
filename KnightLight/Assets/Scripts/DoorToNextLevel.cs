@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorToNextLevel : MonoBehaviour
-{
-
+{ 
     public GameObject kidGameObject;
     public Transform knightTransform;
     public Camera cam;
+    public Animator animator;
     //public bool isPaused;
     private bool showDoor;
     public float timeBetweenPause = 1f;
@@ -15,6 +16,7 @@ public class DoorToNextLevel : MonoBehaviour
     private Vector3 doorPosition;
     private float kidDistance;
     private float knightDistance;
+    private int levelToLoad;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +54,17 @@ public class DoorToNextLevel : MonoBehaviour
         checkDistanceFromDoor();
     }
 
+    public void FadeToLevel (int levelIndex)
+    {
+        levelToLoad = levelIndex;
+        animator.SetTrigger("FadeOut");
+    }
+
+    public void OnFadeComplete()
+    {
+        SceneManager.LoadScene(levelToLoad);
+    }
+
     private bool startTimer()
     {
         if (countdown >= 0) //if countdown is set
@@ -70,7 +83,9 @@ public class DoorToNextLevel : MonoBehaviour
             if (kidDistance <= 5f && knightDistance <= 5f)
             {
                 //change scene
-                Debug.Log("Changing Scene");
+                //Debug.Log("Changing Scene");
+                FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }
@@ -82,6 +97,8 @@ public class DoorToNextLevel : MonoBehaviour
             if (kidGameObject.GetComponent<KidManager>().hasKey)
             {
                 //Put Audio of unlocking door here
+                FindObjectOfType<AudioManager>().Play("DoorOpen");
+
                 cam.GetComponent<SingleTargetCamera>().enabled = true;
                 cam.GetComponent<MultipleTargetCamera>().enabled = false;
                 countdown = timeBetweenPause;

@@ -11,7 +11,7 @@ public class MonsterSpawner : MonoBehaviour
     public class Monster
     {
         public string name;
-        public Transform monster;
+        public Sprite sprite;
     }
 
     [System.Serializable]
@@ -22,9 +22,10 @@ public class MonsterSpawner : MonoBehaviour
     }
 
     //
-    public Transform[] knightAndKid;
+    public List<Transform> knightAndKid;
     public SpawnPoint[] spawnPoints;
-    public Monster[] monsters;
+    public Monster[] monsterSprites;
+    public Transform monster;
 
     public float timeBetweenSpawns = 2f;
     public int maxCountForKey = 10;
@@ -39,15 +40,17 @@ public class MonsterSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        findKnightAndKid();
+
         if (spawnPoints.Length == 0)
         {
         	Debug.LogError("No spawn points referrenced.");
         }
-        if (knightAndKid.Length == 0)
+        if (knightAndKid.Count == 0)
         {
             Debug.LogError("No Knight and Kid referrenced.");
         }
-        if (monsters.Length == 0)
+        if (monsterSprites.Length == 0)
         {
             Debug.LogError("No monsters referrenced.");
         }
@@ -55,6 +58,14 @@ public class MonsterSpawner : MonoBehaviour
         monsterCounter = currNumOfMons;
 
         spawnCountdown = timeBetweenSpawns;
+    }
+
+    private void findKnightAndKid()
+    {
+        Transform knightTransform = GameObject.FindGameObjectWithTag("KnightLight").transform;
+        Transform kidTransform = GameObject.FindGameObjectWithTag("Kid").transform;
+        knightAndKid.Add(knightTransform);
+        knightAndKid.Add(kidTransform);
     }
 
     // Update is called once per frame
@@ -106,17 +117,17 @@ public class MonsterSpawner : MonoBehaviour
     {
         Debug.Log("Choosing Monster: ");
         state = SpawnState.SPAWNING;
-        Transform mon;
+        MonsterManager mon = monster.GetComponent<MonsterManager>();
         if ((monsterCounter >= maxCountForKey) && !spawnedKey)
         {
-            mon = monsters[0].monster;
+            mon.toySprite = monsterSprites[0].sprite;
             spawnedKey = true;
         }
         else
         {
-            mon = monsters[Random.Range(1, monsters.Length)].monster;
+            mon.toySprite = monsterSprites[Random.Range(1, monsterSprites.Length)].sprite;
         }
-        spawnMonster(mon);
+        spawnMonster(monster);
     }
 
     List<Transform> chooseSpawnLocation()
@@ -134,6 +145,7 @@ public class MonsterSpawner : MonoBehaviour
         }
         return openSP;
     }
+
     void spawnMonster(Transform monster)
     {
     	Debug.Log("Spawning monster: " + monster.name);
@@ -142,7 +154,7 @@ public class MonsterSpawner : MonoBehaviour
     	Transform spawnPoint = openSP[Random.Range(0, openSP.Count)];
         randSpawnPos = Random.insideUnitCircle;
     	newSpawnPos = spawnPoint.position + (randSpawnPos * 15);
-        newSpawnPos.y = 0;
+        newSpawnPos.y = 0.6f;
     	Instantiate(monster, newSpawnPos, spawnPoint.rotation);
         state = SpawnState.COUNTING;
         spawnCountdown = timeBetweenSpawns;

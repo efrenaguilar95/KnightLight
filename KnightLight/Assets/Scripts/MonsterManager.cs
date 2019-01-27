@@ -7,7 +7,7 @@ public class MonsterManager : MonoBehaviour
 {
     public Sprite toySprite;
 
-    [SerializeField] float speed = 3.5f;
+    [SerializeField] float speed = 5.5f;
     [SerializeField] int attackStrength = 6;
     [SerializeField] bool childInLampAOE;
     [SerializeField] bool isToy = false;
@@ -21,6 +21,7 @@ public class MonsterManager : MonoBehaviour
     private Transform player;
     private bool alive;
     private float xCoord;
+    private Vector3 eulerAngles;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,10 @@ public class MonsterManager : MonoBehaviour
         {
             stopMovement();
         }
-        moveToPlayer();
+        else
+        {
+            moveToPlayer();
+        }
     }
 
     private void ChildInLight()
@@ -51,11 +55,16 @@ public class MonsterManager : MonoBehaviour
         //	}
     }
 
+    private void freezeAngle()
+    {
+        eulerAngles = transform.rotation.eulerAngles;
+        eulerAngles = new Vector3(eulerAngles.x, 0, eulerAngles.z);
+        transform.rotation = Quaternion.Euler(eulerAngles);
+    }
+
     private void moveToPlayer()
     {
         xCoord = agent.transform.position.x;
-        Debug.Log("xCoord = " + xCoord);
-        Debug.Log("playerPos= " + player.position.x);
         if (xCoord <= player.position.x)
         {
             monster_Anime.SetBool("IsMoveLeft", false);
@@ -64,15 +73,13 @@ public class MonsterManager : MonoBehaviour
         agent.isStopped = false;
         agent.speed = speed;
         agent.SetDestination(player.position);
-        Vector3 eulerAngles = transform.rotation.eulerAngles;
-        eulerAngles = new Vector3(eulerAngles.x, 0, eulerAngles.z);
-        transform.rotation = Quaternion.Euler(eulerAngles);
-
+        freezeAngle();
     }
 
     private void stopMovement()
     {
         agent.isStopped = true;
+        freezeAngle();
         transform.position = this.transform.position;
     }
 
@@ -108,9 +115,15 @@ public class MonsterManager : MonoBehaviour
     {
         if (Light.gameObject.tag == "KnightLight" || Light.gameObject.tag == "Lamp")
         {
-            //monsterAnimator.SetBool("InLight", true);
             turnToToy();
-            //PlayDustParticle();
+            if (this.toySprite.name == "key")
+            {
+                this.gameObject.tag = "Key";
+            }
+            else
+            {
+                this.gameObject.tag = "Toy";
+            }
         }
     }
 
@@ -119,9 +132,11 @@ public class MonsterManager : MonoBehaviour
         if (Light.gameObject.tag == "KnightLight" || Light.gameObject.tag == "Lamp")
         {
             monster_Anime = GetComponent<Animator>();
-            //monsterAnimator.SetBool("InLight", true);
-            //turnToToy();
-            //PlayDustParticle();
+            if (this.gameObject.tag != "Key")
+            {
+                turnToToy();
+                this.gameObject.tag = "Monster";
+            }
         }
     }
 
@@ -138,14 +153,18 @@ public class MonsterManager : MonoBehaviour
         if (isToy)
         {
             monster_Anime.SetBool("IsToy", false);
+            this.gameObject.GetComponent<Animator>().enabled = true;
             PlayDustParticle();
             isToy = false;
         }
         else
         {
             monster_Anime.SetBool("IsToy", true);
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = toySprite;
             PlayDustParticle();
+            stopMovement();
+            this.gameObject.GetComponent<Animator>().enabled = false;
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = toySprite;
+            //Debug.Log(this.gameObject.GetComponent<SpriteRenderer>().sprite);
             isToy = true;
         }
         //}

@@ -112,196 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 56914675ba2b14e4c93765ae2c5d1b36, type: 2}
---- !u!1001 &204000406
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8616990527620093742, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: m_Name
-      value: MonsterSpawnerManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093712, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093712, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093712, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093712, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093712, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093712, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093712, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093712, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093712, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093712, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093712, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: knightAndKid.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsters.Array.data[0].monster
-      value: 
-      objectReference: {fileID: 2418673679454270586, guid: 0c500a585c5670d40b74c4abdece9ef4,
-        type: 3}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsters.Array.data[1].monster
-      value: 
-      objectReference: {fileID: 2418673679454270586, guid: 0c500a585c5670d40b74c4abdece9ef4,
-        type: 3}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsters.Array.data[2].monster
-      value: 
-      objectReference: {fileID: 2418673679454270586, guid: 0c500a585c5670d40b74c4abdece9ef4,
-        type: 3}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsters.Array.data[3].monster
-      value: 
-      objectReference: {fileID: 2418673679454270586, guid: 0c500a585c5670d40b74c4abdece9ef4,
-        type: 3}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: knightAndKid.Array.data[0]
-      value: 
-      objectReference: {fileID: 2126722148}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: knightAndKid.Array.data[1]
-      value: 
-      objectReference: {fileID: 1116684708}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monster
-      value: 
-      objectReference: {fileID: 1033054567, guid: 8207af09b6ab62b4b9f71cf9c264b2bd,
-        type: 3}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.data[0].name
-      value: Key
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.data[0].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d5ddabdb2eff6a649958fbff5ab5ec7f,
-        type: 3}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.data[1].name
-      value: teddybear
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.data[1].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6c5120c59ae6391438a2f76af5a1448f,
-        type: 3}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.data[2].name
-      value: toytruck
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.data[2].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ab9d637392913ba43af030287c7adb31,
-        type: 3}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.data[3].name
-      value: gamestation
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.data[3].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2768e2c7fe63418409ada05ffe32fa3d,
-        type: 3}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.data[4].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cd2c766ef14219d468e7231ee4c148f4,
-        type: 3}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.data[4].name
-      value: bouncyball
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.data[5].sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0c1f3d19a1093954b9c45d44f299b38f,
-        type: 3}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: monsterSprites.Array.data[5].name
-      value: actionfigure
-      objectReference: {fileID: 0}
-    - target: {fileID: 8616990527620093713, guid: 4202a236e7197e048818e8cdc60ab869,
-        type: 3}
-      propertyPath: timeBetweenSpawns
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4202a236e7197e048818e8cdc60ab869, type: 3}
 --- !u!1 &279631291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6,
@@ -326,7 +136,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 943168547}
     m_Modifications:
     - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_Name
@@ -398,6 +208,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+--- !u!4 &943168547 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8060889565276054775, guid: fd983e57b0d784a44a5d606c31776dd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1169105824197436492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &944129663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -448,7 +264,7 @@ PrefabInstance:
     - target: {fileID: 2705480158447156374, guid: 34a5d477d54736843b8cb38458a42e46,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2705480158447156374, guid: 34a5d477d54736843b8cb38458a42e46,
         type: 3}
@@ -693,7 +509,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 39.309002, y: 179.149, z: -0.46500003}
 --- !u!4 &2126722148 stripped
 Transform:
@@ -751,7 +567,7 @@ PrefabInstance:
     - target: {fileID: 1169105824380367186, guid: fd983e57b0d784a44a5d606c31776dd2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1169105824380367186, guid: fd983e57b0d784a44a5d606c31776dd2,
         type: 3}
@@ -825,7 +641,7 @@ PrefabInstance:
     - target: {fileID: 3129751246319033830, guid: 276f030cff33069409460af7d53468d5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3129751246319033830, guid: 276f030cff33069409460af7d53468d5,
         type: 3}
@@ -955,7 +771,7 @@ PrefabInstance:
     - target: {fileID: 7912850202912531291, guid: 1a576f905e0d7e9479db6c9427d67e4f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7912850202912531291, guid: 1a576f905e0d7e9479db6c9427d67e4f,
         type: 3}

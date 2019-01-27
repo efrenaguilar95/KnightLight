@@ -167,7 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25073467fe1c6746aac403ec1ea91c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knightAndKid: []
+  knightAndKid:
+  - {fileID: 3129751246319033830, guid: 276f030cff33069409460af7d53468d5, type: 3}
+  - {fileID: 7912850202912531291, guid: 1a576f905e0d7e9479db6c9427d67e4f, type: 3}
   spawnPoints:
   - spawnPoint: {fileID: 8616990527385790788}
     spawnable: 0
@@ -177,16 +179,21 @@ MonoBehaviour:
     spawnable: 0
   - spawnPoint: {fileID: 8616990527221415214}
     spawnable: 0
-  monsters:
+  monsterSprites:
   - name: Key
-    monster: {fileID: 0}
-  - name: Sweater
-    monster: {fileID: 0}
-  - name: Sports Ball
-    monster: {fileID: 0}
-  - name: Teddy Bear
-    monster: {fileID: 0}
-  timeBetweenSpawns: 2
+    sprite: {fileID: 21300000, guid: d5ddabdb2eff6a649958fbff5ab5ec7f, type: 3}
+  - name: teddybear
+    sprite: {fileID: 21300000, guid: 6c5120c59ae6391438a2f76af5a1448f, type: 3}
+  - name: toytruck
+    sprite: {fileID: 21300000, guid: ab9d637392913ba43af030287c7adb31, type: 3}
+  - name: gamestation
+    sprite: {fileID: 21300000, guid: 2768e2c7fe63418409ada05ffe32fa3d, type: 3}
+  - name: bouncyball
+    sprite: {fileID: 21300000, guid: cd2c766ef14219d468e7231ee4c148f4, type: 3}
+  - name: actionfigure
+    sprite: {fileID: 21300000, guid: 0c1f3d19a1093954b9c45d44f299b38f, type: 3}
+  monster: {fileID: 1033054567, guid: 8207af09b6ab62b4b9f71cf9c264b2bd, type: 3}
+  timeBetweenSpawns: 4
   maxCountForKey: 7
   monsterCap: 10
   spawnCountdown: 0

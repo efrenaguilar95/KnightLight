@@ -67,8 +67,8 @@ public class FPSInput : MonoBehaviour
             movement *= Time.deltaTime;
             movement = transform.TransformDirection(movement);
             _charController.Move(movement); //Last line of code related to regular movement
-            Debug.Log("X : "+inputdirection.x);
-            Debug.Log("Z: "+inputdirection.z);
+       //     Debug.Log("X : "+inputdirection.x);
+         //   Debug.Log("Z: "+inputdirection.z);
 
             if (inputdirection.x < 0f)
             {

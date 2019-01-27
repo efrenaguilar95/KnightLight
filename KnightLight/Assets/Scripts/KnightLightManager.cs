@@ -60,7 +60,7 @@ public class KnightLightManager : MonoBehaviour
 		if (Input.GetKey(KeyCode.A))
 		{
 			rb.AddForce(Vector3.left * speed);
-			Knight_Anime.SetBool("	", false);
+			Knight_Anime.SetBool("isWalkRight", false);
 			Knight_Anime.SetBool("isWalkLeft", true);
 		}
 			

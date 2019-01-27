@@ -30,10 +30,10 @@ public class MonsterManager : MonoBehaviour
 
 	private void ChildInLight()
 	{
-		if(Lamp.isChildInLampAOE())
-		{
-			stopMovement();
-		}
+	//	if(Lamp.isChildInLampAOE())
+		//{
+			//stopMovement();
+	//	}
 	}
 
 	private void stopMovement()

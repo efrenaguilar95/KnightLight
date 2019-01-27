@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KidManager : MonoBehaviour
 {
 	//Bravery
-	[SerializeField] int braveryMeterValue = 100;
+	[SerializeField] int braveryMeterValue;
 	[SerializeField] int braveryDecayRate = 2;
 	[SerializeField] int braveryRecovery = 5;
+	[SerializeField] Slider braveryBarUI;
+	Coroutine decay;
+	Coroutine heal;
 	int braveryMaxValue = 100;
 	float decayTimer = .01f;
 
@@ -27,14 +31,15 @@ public class KidManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+		decay = StartCoroutine(braveryDecay());
 		currentSpeed = speedWalking;
     }
 
     // Update is called once per frame
     void Update()
     {
+		braveryBarUI.value = braveryMeterValue;
 		setCurrentSpeed();
-		braveryDecay();
 		//flashRecharger();
 	}
 
@@ -54,6 +59,9 @@ public class KidManager : MonoBehaviour
 
 
 	//Bavery Functions Start
+
+
+	
 	IEnumerator braveryDecay()
 	{ 
 		if(decayTimer > 0)
@@ -89,6 +97,31 @@ public class KidManager : MonoBehaviour
 		braveryMeterValue += 1;
 		yield return new WaitForSeconds(recoverySpeed);
 	}
+
+	private void OnTriggerEnter(Collider LightSource)
+	{
+		GameObject lightSource = LightSource.gameObject;
+		if (LightSource.tag == "KnightLight")
+		{
+			StopCoroutine(decay);
+			heal = StartCoroutine(BraveryRecoveryRate(1.5f));
+		}
+		if (LightSource.tag == "Lamp")
+		{
+			StopCoroutine(decay);
+			heal = StartCoroutine(BraveryRecoveryRate(0.1f));
+		}
+	}
+
+	private void OnTriggerExit(Collider LightSource)
+	{
+		if (LightSource.tag == "KnightLight" || LightSource.tag == "Lamp")
+		{
+			StopCoroutine(heal);
+			decay = StartCoroutine(braveryDecay());
+		}
+	}
+
 	//Bavery Functions End
 
 
@@ -105,20 +138,4 @@ public class KidManager : MonoBehaviour
 
 
 	//Flash Attack Functions End
-
-	//Light Source Collision Trigger Functions
-	private void OnTriggerEnter(Collider LightSource)
-	{
-		GameObject lightSource = LightSource.gameObject;
-		if (LightSource.tag == "KnightLight")
-		{
-			StartCoroutine(BraveryRecoveryRate(1.5f));
-		}
-		if(LightSource.tag == "Lamp")
-		{
-			StartCoroutine(BraveryRecoveryRate(0.1f));
-		}
-	}
-
-	//Light Source Tirgger Functions End
 }

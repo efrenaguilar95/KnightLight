@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731725, g: 0.13414745, b: 0.12107873, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -111,7 +111,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: fd943be922d81aa4c8106e0071b7c9fd, type: 2}
 --- !u!1001 &135375823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,6 +122,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_Name
       value: tabl (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -198,6 +206,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair_2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9cbe074c1f7b44a47b343b90afd553d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9cbe074c1f7b44a47b343b90afd553d6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9cbe074c1f7b44a47b343b90afd553d6, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
@@ -264,6 +280,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1571765998}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &408160037 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1575156776, guid: b3f90ea3520610f49a5f95afe3f01f05,
+    type: 3}
+  m_PrefabInstance: {fileID: 1862258112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &425256361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -274,6 +296,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: fa173447d2ebd6d4fbf0e01d5713c2f1, type: 3}
       propertyPath: m_Name
       value: bed
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: fa173447d2ebd6d4fbf0e01d5713c2f1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: fa173447d2ebd6d4fbf0e01d5713c2f1, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fa173447d2ebd6d4fbf0e01d5713c2f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -348,6 +378,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: l_couch (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0e0e1016d70dd9d4c9b9a8161846b6a2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0e0e1016d70dd9d4c9b9a8161846b6a2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 0e0e1016d70dd9d4c9b9a8161846b6a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.66
@@ -420,6 +458,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_Name
       value: tabl (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -633,6 +679,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair_2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9cbe074c1f7b44a47b343b90afd553d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9cbe074c1f7b44a47b343b90afd553d6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9cbe074c1f7b44a47b343b90afd553d6, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
@@ -703,6 +757,14 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 6ddce163ced4a8b4fa2613583ff7f493, type: 3}
       propertyPath: m_Name
       value: chair_endoftable (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ddce163ced4a8b4fa2613583ff7f493, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ddce163ced4a8b4fa2613583ff7f493, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6ddce163ced4a8b4fa2613583ff7f493, type: 3}
       propertyPath: m_LocalPosition.x
@@ -783,6 +845,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: desk
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 26604815703e1c146ab38bcf92c699df, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 26604815703e1c146ab38bcf92c699df, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 26604815703e1c146ab38bcf92c699df, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.1
@@ -856,6 +926,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: l_couch
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0e0e1016d70dd9d4c9b9a8161846b6a2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0e0e1016d70dd9d4c9b9a8161846b6a2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 0e0e1016d70dd9d4c9b9a8161846b6a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.7
@@ -928,6 +1006,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_Name
       value: tabl (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1067,6 +1153,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair_2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9cbe074c1f7b44a47b343b90afd553d6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 9cbe074c1f7b44a47b343b90afd553d6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 9cbe074c1f7b44a47b343b90afd553d6, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
@@ -1131,6 +1225,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_Name
       value: tabl (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1270,6 +1372,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair_endoftable
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ddce163ced4a8b4fa2613583ff7f493, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6ddce163ced4a8b4fa2613583ff7f493, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 6ddce163ced4a8b4fa2613583ff7f493, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.68
@@ -1348,6 +1458,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_Name
       value: tabl
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1539,6 +1657,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: desk_chair
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: f84897310594db7458f6b0653c4ef895, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: f84897310594db7458f6b0653c4ef895, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f84897310594db7458f6b0653c4ef895, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
@@ -1658,6 +1784,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2091164648, guid: b3f90ea3520610f49a5f95afe3f01f05, type: 3}
+      propertyPath: knightAndKid.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091164648, guid: b3f90ea3520610f49a5f95afe3f01f05, type: 3}
+      propertyPath: maxCountForKey
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3f90ea3520610f49a5f95afe3f01f05, type: 3}
 --- !u!1001 &1934454370
@@ -1670,6 +1804,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_Name
       value: tabl (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1739,6 +1881,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_Name
       value: tabl (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1821,6 +1971,7 @@ GameObject:
   - component: {fileID: 2024512644}
   - component: {fileID: 2024512643}
   - component: {fileID: 2024512642}
+  - component: {fileID: 2024512645}
   - component: {fileID: 2024512641}
   m_Layer: 0
   m_Name: Camera
@@ -1913,6 +2064,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 41.923, y: 180.2, z: 0}
+--- !u!114 &2024512645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024512640}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb9de1bab218ef547b8aac21f555e16b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 408160037}
+  offset: {x: 10, y: 15, z: 20}
+  smoothTime: 0.5
+  minZoom: 40
+  maxZoom: 10
+  zoomLimiter: 50
 --- !u!1001 &2120067346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1923,6 +2092,14 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_Name
       value: tabl (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44d11521a9894b44c9eafaf326ab8cb6, type: 3}
       propertyPath: m_LocalPosition.x

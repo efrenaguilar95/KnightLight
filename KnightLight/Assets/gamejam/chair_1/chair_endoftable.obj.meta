@@ -5,17 +5,24 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Box002
     100002: //RootNode
+    100004: chair_endoftable_root
     400000: Box002
     400002: //RootNode
+    400004: chair_endoftable_root
     2100000: Box002Mat
     2300000: Box002
     3300000: Box002
     4300000: Box002
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Box002Mat
+    second: {fileID: 2100000, guid: 3a19353ef0dde8840a3f300ed92eea02, type: 2}
   materials:
     importMaterials: 1
     materialName: 2
-    materialSearch: 0
+    materialSearch: 1
     materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
@@ -45,7 +52,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
+    useSRGBMaterialColor: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

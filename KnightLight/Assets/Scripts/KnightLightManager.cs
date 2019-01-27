@@ -27,12 +27,12 @@ public class KnightLightManager : MonoBehaviour
     void Update()
     {
 		monsterInKnightAOE = false;
-		Move();
+		//Move();
 	}
 
 	void OnCollisionEnter(Collision collision)
 	{
-		if(collision.gameObject.tag == "monster")
+		if(collision.gameObject.tag == "Monster")
 		{
 			isMonsterInKnightAOE();
 			collision.gameObject.GetComponent<MonsterManager>().changeToToy();
@@ -53,7 +53,7 @@ public class KnightLightManager : MonoBehaviour
 		}
 	}
 
-	private void Move()
+/*	private void Move()
 	{
 		Rigidbody rb = GetComponent<Rigidbody>();
 
@@ -79,4 +79,5 @@ public class KnightLightManager : MonoBehaviour
 		if (Input.GetKey(KeyCode.S))
 			rb.AddForce(Vector3.down);
 	}
+*/
 }

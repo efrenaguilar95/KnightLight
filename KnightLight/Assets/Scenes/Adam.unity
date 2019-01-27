@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621655595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -46.23}
+  m_LocalPosition: {x: -2.1, y: 1, z: -58.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -305,8 +305,27 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1274429125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 536510219560303273, guid: 430f894fcacb6174ea7528280e78472b,
+    type: 3}
+  m_PrefabInstance: {fileID: 536510218709113074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1274429126
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274429125}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 7.96
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &536510218709113074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -393,10 +412,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 1899040100733965346, guid: 0c500a585c5670d40b74c4abdece9ef4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2418673679454270586, guid: 0c500a585c5670d40b74c4abdece9ef4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3865557
+      value: 28.91
       objectReference: {fileID: 0}
     - target: {fileID: 2418673679454270586, guid: 0c500a585c5670d40b74c4abdece9ef4,
         type: 3}
@@ -431,7 +455,7 @@ PrefabInstance:
     - target: {fileID: 2418673679454270586, guid: 0c500a585c5670d40b74c4abdece9ef4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2418673679454270586, guid: 0c500a585c5670d40b74c4abdece9ef4,
         type: 3}
@@ -453,5 +477,11 @@ PrefabInstance:
       propertyPath: Lamp
       value: 
       objectReference: {fileID: 790874628}
+    - target: {fileID: 1818851936061386963, guid: 0c500a585c5670d40b74c4abdece9ef4,
+        type: 3}
+      propertyPath: duskParticle
+      value: 
+      objectReference: {fileID: 3449469068670871207, guid: d10189bfc7adfb54c90e6e7f51d29224,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c500a585c5670d40b74c4abdece9ef4, type: 3}

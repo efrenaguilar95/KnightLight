@@ -126,6 +126,7 @@ public class MonsterSpawner : MonoBehaviour
         else
         {
             mon.toySprite = monsterSprites[Random.Range(1, monsterSprites.Length)].sprite;
+            monster.GetComponent<MonsterManager>().toySprite = mon.toySprite;
         }
         spawnMonster(monster);
     }

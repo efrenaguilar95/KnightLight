@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1033054564}
   - component: {fileID: 1033054563}
   - component: {fileID: 589826026459066969}
-  - component: {fileID: 4365667568857288784}
   m_Layer: 0
   m_Name: Monster2
   m_TagString: Monster
@@ -102,7 +101,7 @@ MonoBehaviour:
   childInLampAOE: 0
   isToy: 0
   Lamp: {fileID: 0}
-  duskParticle: {fileID: 0}
+  duskParticle: {fileID: 1317338037, guid: 5a9b9794561815147ba89b7a1004a218, type: 3}
 --- !u!195 &1033054564
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -157,22 +156,3 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 15
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4365667568857288784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033054562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dfaa8e081dfe6d4c932fa791a788596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toySprite: {fileID: 0}
-  speed: 3.5
-  attackStrength: 6
-  childInLampAOE: 0
-  isToy: 0
-  Lamp: {fileID: 0}
-  duskParticle: {fileID: 0}

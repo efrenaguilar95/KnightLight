@@ -12,6 +12,7 @@ TagManager:
   - SpawnPoint
   - Toy
   - Key
+  - Door
   layers:
   - Default
   - TransparentFX

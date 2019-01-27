@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - Monster
+  - KnightLight
+  - Kid
+  - KnightSprite
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

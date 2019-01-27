@@ -5,17 +5,24 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: Plane001
+    100004: carpet_root
     400000: //RootNode
     400002: Plane001
+    400004: carpet_root
     2100000: Plane001Mat
     2300000: Plane001
     3300000: Plane001
     4300000: Plane001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plane001Mat
+    second: {fileID: 2100000, guid: 2e2573af1e0fdb640b8ffeb6df1c4659, type: 2}
   materials:
     importMaterials: 1
-    materialName: 0
-    materialSearch: 1
+    materialName: 2
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4

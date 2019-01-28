@@ -156,7 +156,7 @@ public class MonsterSpawner : MonoBehaviour
         List<Transform> openSP = chooseSpawnLocation();
     	Transform spawnPoint = openSP[Random.Range(0, openSP.Count)];
         randSpawnPos = Random.insideUnitCircle;
-    	newSpawnPos = spawnPoint.position + (randSpawnPos * 15);
+    	newSpawnPos = spawnPoint.position + (randSpawnPos * 3);
         newSpawnPos.y = 0.6f;
     	Instantiate(monster, newSpawnPos, spawnPoint.rotation);
         state = SpawnState.COUNTING;

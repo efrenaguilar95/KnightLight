@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 3df04fa620b2337448f1830126719113
-  - enabled: 0
-    path: Assets/Scenes/Adam.unity
-    guid: b78908a8f8840d74db3423830c07dc14
   - enabled: 1
-    path: Assets/Scenes/RickyTestScene2.unity
-    guid: 95813ba5d879d014fb511864a561f6af
+    path: Assets/Scenes/Room1.unity
+    guid: 3fa109591b57383418426caf31c931ae
+  - enabled: 1
+    path: Assets/Scenes/BedRoom2.unity
+    guid: 3d19d0f70d3a6c14b93a70ed487ab68e
+  - enabled: 1
+    path: Assets/Scenes/Room2.unity
+    guid: 30b74cc3f7c821f439c69a09701fa3d7
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: edfcb03dc7498b14392d3f0fa12c3088
